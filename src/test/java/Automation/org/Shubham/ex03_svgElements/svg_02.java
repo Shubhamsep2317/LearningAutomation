@@ -41,5 +41,6 @@ public class svg_02 {
                 state.click();
             }
         }
+        driver.quit();
     }
 }
