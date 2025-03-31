@@ -25,7 +25,7 @@ public class ex_01_31_03_2025 {
     @BeforeTest
     public void login() {
         edgeDriver = new EdgeDriver();
-        edgeDriver.manage().window().maximize();
+        //edgeDriver.manage().window().maximize();
         String URL = "https://katalon-demo-cura.herokuapp.com/";
         edgeDriver.get(URL);
     }
@@ -88,7 +88,7 @@ public class ex_01_31_03_2025 {
 
         waitJVM(5000);
 
-        //edgeDriver.quit();
+
     }
 
     @Description("Verify Appointment Details")
@@ -125,7 +125,7 @@ public class ex_01_31_03_2025 {
 
         String currentURL = edgeDriver.getCurrentUrl();
         Assert.assertEquals(currentURL, "https://katalon-demo-cura.herokuapp.com/");
-
+        edgeDriver.quit();
     }
 
 }
