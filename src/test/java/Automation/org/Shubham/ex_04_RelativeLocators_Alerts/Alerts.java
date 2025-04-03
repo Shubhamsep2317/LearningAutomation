@@ -31,34 +31,31 @@ public class Alerts {
         Alert alert1 = edgeDriver.switchTo().alert();
         alert1.accept();
 
-        WebElement Result= edgeDriver.findElement(By.cssSelector("p[id='result']"));
-        String ActualResult= Result.getText();
-        Assert.assertEquals(ActualResult,"You successfully clicked an alert");
+        WebElement Result = edgeDriver.findElement(By.cssSelector("p[id='result']"));
+        String ActualResult = Result.getText();
+        Assert.assertEquals(ActualResult, "You successfully clicked an alert");
 
         waitJVM(5000);
 
         WebElement alertDismiss = edgeDriver.findElement(RelativeLocator.with(By.xpath("//button[@onclick='jsConfirm()']")).below(alertAccept));
         alertDismiss.click();
 
-        Alert alert2=edgeDriver.switchTo().alert();
+        Alert alert2 = edgeDriver.switchTo().alert();
         alert2.dismiss();
-        String ActualResult2= Result.getText();
-        Assert.assertEquals(ActualResult2,"You clicked: Cancel");
+        String ActualResult2 = Result.getText();
+        Assert.assertEquals(ActualResult2, "You clicked: Cancel");
 
-        checkVisibility(edgeDriver,RelativeLocator.with(By.xpath("//button[@onclick='jsPrompt()']")).below(alertDismiss));
-        WebElement alertSendKeys=edgeDriver.findElement(RelativeLocator.with(By.xpath("//button[@onclick='jsPrompt()']")).below(alertDismiss));
+        checkVisibility(edgeDriver, RelativeLocator.with(By.xpath("//button[@onclick='jsPrompt()']")).below(alertDismiss));
+        WebElement alertSendKeys = edgeDriver.findElement(RelativeLocator.with(By.xpath("//button[@onclick='jsPrompt()']")).below(alertDismiss));
         alertSendKeys.click();
 
-        Alert alert3=edgeDriver.switchTo().alert();
+        Alert alert3 = edgeDriver.switchTo().alert();
         alert3.sendKeys("Shubham");
         alert3.accept();
 
-        String ActualResult3= Result.getText();
-        Assert.assertEquals(ActualResult3,"You entered: Shubham");
+        String ActualResult3 = Result.getText();
+        Assert.assertEquals(ActualResult3, "You entered: Shubham");
 
-
-
-
-
+        edgeDriver.quit();
     }
 }
