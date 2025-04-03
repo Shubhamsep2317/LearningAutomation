@@ -6,6 +6,7 @@
         <classes>
             <class name="Automation.org.Shubham.Dailytasks.ex_01_31_03_2025">
                 <methods>
+                    
                     <include name="katalon_demo_makeBooking"/>
                     <include name="verifyAppointmentDetails"/>
                 </methods>
