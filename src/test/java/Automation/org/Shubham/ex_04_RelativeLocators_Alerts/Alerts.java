@@ -1,5 +1,6 @@
 package Automation.org.Shubham.ex_04_RelativeLocators_Alerts;
 
+import io.qameta.allure.Description;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -14,6 +15,7 @@ import static Automation.org.Shubham.WaitHelper.WaitHelpers.waitJVM;
 
 public class Alerts {
 
+    @Description("Verify all the alert types say dismiss, accept and Asserts using TestNG")
     @Test
     public void alerts() {
 
