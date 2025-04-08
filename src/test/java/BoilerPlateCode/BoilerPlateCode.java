@@ -25,7 +25,7 @@ public class BoilerPlateCode {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        //driver.quit();
+        driver.quit();
     }
 
 }
