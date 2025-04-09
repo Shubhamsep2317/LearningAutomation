@@ -17,7 +17,7 @@ public class WaitHelpers {
     // Thread sleep wait for JVM
     public static void waitJVM(int time){
         try {
-            Thread.sleep(time);
+            Thread.sleep(time );
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }

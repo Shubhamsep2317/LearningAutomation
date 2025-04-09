@@ -9,7 +9,6 @@ import org.testng.annotations.Test;
 import java.util.List;
 import java.util.Set;
 
-import static Automation.org.Shubham.WaitHelper.WaitHelpers.checkVisibility;
 import static Automation.org.Shubham.WaitHelper.WaitHelpers.waitJVM;
 
 public class iframes extends BoilerPlateCode {
@@ -23,7 +22,7 @@ public class iframes extends BoilerPlateCode {
 
            //driver.navigate().refresh();
 
-           //driver.manage().window().maximize();
+           driver.manage().window().maximize();
 
 
 
@@ -33,10 +32,10 @@ public class iframes extends BoilerPlateCode {
 
            waitJVM(10000);
 
-           checkVisibility(driver,By.cssSelector("svg[class='vwo-survey-close-icon']"),5);
-
-           WebElement closeIcon=driver.findElement(By.cssSelector("svg[class='vwo-survey-close-icon']"));
-           closeIcon.click();
+//           checkVisibility(driver,By.cssSelector("svg[class='vwo-survey-close-icon']"),5);
+//
+//           WebElement closeIcon=driver.findElement(By.cssSelector("svg[class='vwo-survey-close-icon']"));
+//           closeIcon.click();
 //           WebElement selectNo=driver.findElement(By.cssSelector("label[id='label-2']"));
 //           selectNo.click();
 //
@@ -62,11 +61,15 @@ public class iframes extends BoilerPlateCode {
            for(String handle:allHandles){
                if(!getParentHandle.equals(handle)){
                    driver.switchTo().window(handle);
+                   driver.switchTo().frame(driver.findElement(By.xpath("//div[@id='clickmap-image']//following::iframe[@id='heatmap-iframe']")));
+
+                   WebElement clickMap=driver.findElement(By.cssSelector("div[data-qa='liqokuxuba']"));
+                   clickMap.click();
                }
            }
 
-           driver.manage().window().maximize();
-           waitJVM(30000);
+//           driver.manage().window().maximize();
+//           waitJVM(30000);
 
 
 //           checkVisibility(driver,By.id("zenPopupModalClose"));
@@ -77,10 +80,7 @@ public class iframes extends BoilerPlateCode {
            //checkVisibility(driver,By.xpath("//div[@id='clickmap-image']//following::iframe[@id='heatmap-iframe']"));
 
 
-           driver.switchTo().frame(driver.findElement(By.xpath("//div[@id='clickmap-image']//following::iframe[@id='heatmap-iframe']")));
 
-           WebElement clickMap=driver.findElement(By.cssSelector("div[data-qa='liqokuxuba']"));
-           clickMap.click();
 
            //checkVisibility(driver,By.xpath(""));
 
