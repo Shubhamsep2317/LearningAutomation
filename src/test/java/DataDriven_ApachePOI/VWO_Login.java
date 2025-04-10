@@ -20,9 +20,11 @@ public class VWO_Login extends BoilerPlateCode {
         driver.manage().window().maximize();
 
         WebElement inputUsername = driver.findElement(By.cssSelector("input[data-qa='hocewoqisi']"));
+        inputUsername.clear();
         inputUsername.sendKeys(username);
 
         WebElement inputPassword = driver.findElement(By.cssSelector("input[data-qa='jobodapuxe']"));
+        inputPassword.clear();
         inputPassword.sendKeys(password);
 
         WebElement signIn = driver.findElement(By.xpath("//button[@id='js-login-btn']"));
